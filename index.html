@@ -223,6 +223,9 @@ td .mono{color:var(--green);font-weight:700}
 .dropzone .ic{font-size:34px;margin-bottom:10px}
 #thumbs{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
 #thumbs img{width:90px;height:90px;object-fit:cover;border-radius:9px;border:1px solid var(--line)}
+#thumbs .th{position:relative}
+#thumbs .th a{display:block}
+#thumbs .th button{position:absolute;top:4px;right:4px;width:22px;height:22px;border-radius:50%;border:none;cursor:pointer;background:rgba(0,0,0,.65);color:#fff;font-size:12px;line-height:22px;padding:0}
 
 /* ===== QUIZ ===== */
 .quiz{background:linear-gradient(160deg,var(--navy-2),var(--graphite));border:1px solid var(--line);border-radius:var(--radius);padding:26px}
@@ -484,8 +487,8 @@ section.block:first-child,.hero{min-height:auto}
 
  <div class="stat-row">
  <div class="stat"><div class="v">4.000</div><div class="l">RPM máximo</div><div class="d">Deslizamento came–tucho</div></div>
- <div class="stat"><div class="v">↓40%</div><div class="l">Redução de atrito</div><div class="d">Plateau vs. convencional</div></div>
- <div class="stat"><div class="v">3×</div><div class="l">Vida útil</div><div class="d">Com Rk e Rvk corretos</div></div>
+ <div class="stat"><div class="v">↓40%</div><div class="l">Redução de atrito</div><div class="d">Plateau vs. convencional<br><span class="tag a">estimativa ilustrativa</span></div></div>
+ <div class="stat"><div class="v">3×</div><div class="l">Vida útil</div><div class="d">Com Rk e Rvk corretos<br><span class="tag a">estimativa ilustrativa</span></div></div>
  <div class="stat"><div class="v">≤0,05µm</div><div class="l">Meta Rpk</div><div class="d">Picos após polimento plateau</div></div>
  </div>
 
@@ -633,7 +636,7 @@ section.block:first-child,.hero{min-height:auto}
  <div class="grid-2" style="margin-bottom:26px">
  <div class="card">
  <h3>⚙ Interface crítica: Came × Tucho</h3>
- <p>Uma rugosidade inadequada rompe o filme de óleo e gera desgaste prematuro em <b>menos de 500 horas</b> de operação. Lobos, mancais (journals) e zonas de contato exigem acabamento controlado porque ali a pressão de contato é máxima e o regime de lubrificação é limítrofe (misto/hidrodinâmico).</p>
+ <p>Uma rugosidade inadequada rompe o filme de óleo e gera desgaste prematuro em <b>menos de 500 horas</b> de operação <span class="tag a">estimativa ilustrativa</span>. Lobos, mancais (journals) e zonas de contato exigem acabamento controlado porque ali a pressão de contato é máxima e o regime de lubrificação é limítrofe (misto/hidrodinâmico).</p>
  </div>
  <div class="figbox" style="display:flex;align-items:center">
  <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg">
@@ -657,9 +660,9 @@ section.block:first-child,.hero{min-height:auto}
  <div class="flow" style="margin-bottom:8px">
  <div class="step"><div class="n" style="background:var(--red);color:#fff">1</div><h4>Picos não removidos</h4><p>Rpk elevado após retífica</p></div>
  <div class="step"><div class="n" style="background:var(--amber);color:#08231a">2</div><h4>Quebra do filme</h4><p>Contato pico a pico, óleo descontínuo</p></div>
- <div class="step"><div class="n" style="background:var(--amber);color:#08231a">3</div><h4>Desgaste acelerado</h4><p>Exponencial nas primeiras 500 h</p></div>
+ <div class="step"><div class="n" style="background:var(--amber);color:#08231a">3</div><h4>Desgaste acelerado</h4><p>Exponencial nas primeiras 500 h</p><span class="tag a">estimativa ilustrativa</span></div>
  <div class="step"><div class="n" style="background:var(--red);color:#fff">4</div><h4>Ruído NVH + falha</h4><p>Instabilidade no trem de válvulas</p></div>
- <div class="step"><div class="n" style="background:var(--red);color:#fff">5</div><h4>↑ Consumo · ↑ TCO</h4><p>+2–4% combustível em frota</p></div>
+ <div class="step"><div class="n" style="background:var(--red);color:#fff">5</div><h4>↑ Consumo · ↑ TCO</h4><p>+2–4% combustível em frota</p><span class="tag a">estimativa ilustrativa</span></div>
  </div>
  <div class="example"><b>Linguagem de chão de fábrica:</b> em usinagem de componentes automotivos pesados, "tratar a causa na fase certa" significa nunca tentar compensar uma falha de retífica aumentando o polimento — a base ruim sempre reaparece.</div>
 </section>
@@ -856,10 +859,10 @@ section.block:first-child,.hero{min-height:auto}
  </div>
 
  <div class="stat-row">
- <div class="stat"><div class="v">↓40%</div><div class="l">Redução de atrito</div><div class="d">Plateau vs. convencional</div></div>
- <div class="stat"><div class="v">3×</div><div class="l">Maior durabilidade</div><div class="d">Com Rk e Rvk corretos</div></div>
+ <div class="stat"><div class="v">↓40%</div><div class="l">Redução de atrito</div><div class="d">Plateau vs. convencional<br><span class="tag a">estimativa ilustrativa</span></div></div>
+ <div class="stat"><div class="v">3×</div><div class="l">Maior durabilidade</div><div class="d">Com Rk e Rvk corretos<br><span class="tag a">estimativa ilustrativa</span></div></div>
  <div class="stat"><div class="v">≤0,05µm</div><div class="l">Rpk pós-polimento</div><div class="d">Meta plateau</div></div>
- <div class="stat"><div class="v">2–4%</div><div class="l">Economia combustível</div><div class="d">Trem de válvulas eficiente</div></div>
+ <div class="stat"><div class="v">2–4%</div><div class="l">Economia combustível</div><div class="d">Trem de válvulas eficiente<br><span class="tag a">estimativa ilustrativa</span></div></div>
  </div>
 </section>
 
@@ -914,11 +917,11 @@ section.block:first-child,.hero{min-height:auto}
  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">O que significa "tratar a causa na fase certa"?<span class="arrow">+</span></div><div class="faq-a"><div class="inner">Rz e Wt nascem na retífica; Rpk, Rk e Rvk são definidos no polimento. Corrigir um problema na fase errada mascara o sintoma sem eliminar a causa — a base ruim reaparece em operação.</div></div></div>
  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Por que cut-off errado invalida a medição?<span class="arrow">+</span></div><div class="faq-a"><div class="inner">O cut-off define o que entra como rugosidade. Com λc diferente do especificado, parte da ondulação é contada como rugosidade (ou vice-versa), tornando os valores incomparáveis entre peças e operadores.</div></div></div>
  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Rvk muito baixo é bom?<span class="arrow">+</span></div><div class="faq-a"><div class="inner">Não. Rvk muito baixo indica que o polimento removeu os micro-reservatórios de óleo. Sem vales, a lubrificação hidrodinâmica falha sob alta carga e o desgaste aumenta.</div></div></div>
- <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Como a rugosidade afeta o consumo de combustível?<span class="arrow">+</span></div><div class="faq-a"><div class="inner">Atrito excessivo no trem de válvulas eleva o consumo em torno de 2–4% (exemplo). Em frotas pesadas, isso impacta diretamente o TCO ao longo da vida do motor.</div></div></div>
+ <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Como a rugosidade afeta o consumo de combustível?<span class="arrow">+</span></div><div class="faq-a"><div class="inner">Atrito excessivo no trem de válvulas eleva o consumo em torno de 2–4% (estimativa ilustrativa, sem referência publicada). Em frotas pesadas, isso impacta diretamente o TCO ao longo da vida do motor.</div></div></div>
  </div>
 
  <h3 style="font-size:17px;margin-bottom:12px">📎 Anexos da planta</h3>
- <p class="sub" style="margin-bottom:0">Espaço para anexar fotos, desenhos, gráficos e exemplos reais (carregamento local, somente nesta sessão).</p>
+ <p class="sub" style="margin-bottom:0">Espaço para anexar fotos, desenhos, gráficos e exemplos reais (salvos no banco de dados deste navegador — permanecem após fechar a página).</p>
  <div class="dropzone" onclick="document.getElementById('fileInp').click()">
  <div class="ic">📁</div>
  <div>Clique para anexar imagens (perfis, desenhos, peças)</div>
@@ -1067,7 +1070,7 @@ section.block:first-child,.hero{min-height:auto}
 
   <!-- HISTÓRICO -->
   <div class="ts-hist">
-   <h3 style="margin-top:26px">🗂️ Histórico de diagnósticos <span style="font-size:11px;color:var(--mute);font-weight:500">(sessão local)</span></h3>
+   <h3 style="margin-top:26px">🗂️ Histórico de diagnósticos <span style="font-size:11px;color:var(--mute);font-weight:500">(salvo no banco de dados deste navegador)</span></h3>
    <div class="ts-htable">
     <table>
      <thead><tr><th>Data</th><th>Máquina</th><th>Produto</th><th>Parâmetro</th><th>Ação</th><th>Resultado</th><th></th></tr></thead>
@@ -1222,12 +1225,58 @@ function libFilter(){
  document.querySelectorAll('#faqList .faq-item').forEach(f=>f.style.display=f.textContent.toLowerCase().includes(q)?'':'none');
 }
 
+/* ===== BANCO DE DADOS LOCAL (IndexedDB) ===== */
+const SIADB=(function(){
+ let p=null;
+ function open(){
+  if(p) return p;
+  p=new Promise((res,rej)=>{
+   if(!window.indexedDB){rej(new Error('IndexedDB indisponível'));return;}
+   const r=indexedDB.open('sia-dashboard',1);
+   r.onupgradeneeded=()=>{const d=r.result;
+    if(!d.objectStoreNames.contains('historico')) d.createObjectStore('historico',{keyPath:'id',autoIncrement:true});
+    if(!d.objectStoreNames.contains('anexos')) d.createObjectStore('anexos',{keyPath:'id',autoIncrement:true});};
+   r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error);
+  });
+  return p;
+ }
+ function tx(store,mode,fn){
+  return open().then(d=>new Promise((res,rej)=>{
+   const t=d.transaction(store,mode),st=t.objectStore(store),q=fn(st);
+   t.oncomplete=()=>res(q&&q.result); t.onerror=()=>rej(t.error); t.onabort=()=>rej(t.error);
+  }));
+ }
+ return{
+  all:s=>tx(s,'readonly',st=>st.getAll()),
+  add:(s,v)=>tx(s,'readwrite',st=>st.add(v)),
+  del:(s,id)=>tx(s,'readwrite',st=>st.delete(id))
+ };
+})();
+
 /* ===== ATTACHMENTS ===== */
-function addThumbs(e){
- [...e.target.files].forEach(f=>{
- const r=new FileReader();r.onload=ev=>{const i=document.createElement('img');i.src=ev.target.result;document.getElementById('thumbs').appendChild(i);};r.readAsDataURL(f);
- });
+const thumbURLs=[];
+function renderThumbs(){
+ SIADB.all('anexos').then(list=>{
+  thumbURLs.splice(0).forEach(u=>URL.revokeObjectURL(u));
+  const box=document.getElementById('thumbs'); box.innerHTML='';
+  list.sort((a,b)=>b.id-a.id).forEach(a=>{
+   const u=URL.createObjectURL(a.blob); thumbURLs.push(u);
+   const w=document.createElement('div'); w.className='th';
+   const l=document.createElement('a'); l.href=u; l.target='_blank'; l.rel='noopener'; l.title=a.nome||'';
+   const i=document.createElement('img'); i.src=u; i.alt=a.nome||'anexo'; l.appendChild(i);
+   const b=document.createElement('button'); b.type='button'; b.title='Remover'; b.textContent='✕';
+   b.onclick=()=>{ if(confirm('Remover este anexo?')) SIADB.del('anexos',a.id).then(renderThumbs); };
+   w.appendChild(l); w.appendChild(b); box.appendChild(w);
+  });
+ }).catch(err=>console.warn('Anexos:',err));
 }
+function addThumbs(e){
+ const files=[...e.target.files]; e.target.value='';
+ Promise.all(files.map(f=>SIADB.add('anexos',{nome:f.name,tipo:f.type,data:new Date().toISOString(),blob:f})))
+  .then(renderThumbs)
+  .catch(err=>alert('Não foi possível salvar o anexo: '+err.message));
+}
+renderThumbs();
 
 /* ===== QUIZ ===== */
 const quiz=[
@@ -1544,12 +1593,20 @@ window.TS_ALIASES = [
   };
 
   /* ---- Histórico ---- */
+  function loadHist(){
+    return SIADB.all('historico').then(function(list){
+      hist=list.sort(function(a,b){return b.id-a.id;}); renderHist();
+    }).catch(function(err){console.warn('Histórico:',err);});
+  }
   window.tsSaveHistory=function(){
     var g=function(id){return (document.getElementById(id).value||'—');};
-    hist.unshift({data:g('tsfData'),maq:g('tsfMaq'),prod:g('tsfProd'),param:g('tsfParam'),acao:g('tsfAcao'),res:g('tsfRes')});
-    renderHist();
+    var rec={data:g('tsfData'),maq:g('tsfMaq'),prod:g('tsfProd'),param:g('tsfParam'),causa:g('tsfCausa'),acao:g('tsfAcao'),res:g('tsfRes'),criadoEm:new Date().toISOString()};
+    SIADB.add('historico',rec).then(loadHist).catch(function(err){alert('Não foi possível salvar no histórico: '+err.message);});
   };
-  window.tsDelHistory=function(i){ hist.splice(i,1); renderHist(); };
+  window.tsDelHistory=function(id){
+    if(!confirm('Remover este registro do histórico?')) return;
+    SIADB.del('historico',id).then(loadHist);
+  };
   function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
   function renderHist(){
     var b=document.getElementById('tsHistBody');
@@ -1557,11 +1614,11 @@ window.TS_ALIASES = [
     b.innerHTML=hist.map(function(h,i){
       return '<tr><td>'+esc(h.data)+'</td><td>'+esc(h.maq)+'</td><td>'+esc(h.prod)+'</td>'+
         '<td>'+esc(h.param)+'</td><td>'+esc(h.acao)+'</td><td>'+esc(h.res)+'</td>'+
-        '<td><button class="ts-del" onclick="tsDelHistory('+i+')" title="Remover">✕</button></td></tr>';
+        '<td><button class="ts-del" onclick="tsDelHistory('+h.id+')" title="Remover">✕</button></td></tr>';
     }).join('');
   }
 
-  buildPicker(); buildMatrix();
+  buildPicker(); buildMatrix(); loadHist();
 })();
 
 </script>
