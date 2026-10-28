@@ -557,7 +557,7 @@ section.block:first-child,.hero{min-height:auto}
 <section class="block reveal" id="parametros">
  <span class="kicker">Seção 03 · Métricas</span>
  <h2 class="title">Parâmetros técnicos</h2>
- <p class="sub">Cada fase de fabricação é governada por parâmetros distintos. A retífica define a base (Rz, Wt); o polimento define a função (Rk, Rpk, Rvk pela curva de Abbott-Firestone). Use o toggle <b>Básico / Avançado</b> no topo para mais profundidade.</p>
+ <p class="sub">Cada fase de fabricação é governada por parâmetros distintos. A retífica define a base (Rz, Wt e o núcleo Rk); o polimento define a função (Rpk, Rvk). Os três parâmetros da curva de Abbott-Firestone são medidos após o polimento. Use o toggle <b>Básico / Avançado</b> no topo para mais profundidade.</p>
 
  <h3 style="font-size:16px;color:var(--green);margin-bottom:14px;letter-spacing:.04em">▸ FASE RETÍFICA — a fundação do processo</h3>
  <div class="grid-2" style="margin-bottom:30px">
@@ -675,8 +675,8 @@ section.block:first-child,.hero{min-height:auto}
 
  <div class="flow" style="margin-bottom:30px">
  <div class="step"><div class="n">1</div><h4>Forjado bruto</h4><div class="meta">geometria inicial</div><p>Material e geometria de partida do came.</p></div>
- <div class="step"><div class="n">2</div><h4>Retífica</h4><div class="meta">CNC / CBN</div><p>Rz · Wt controlados → rugosidade base e integridade macro.</p></div>
- <div class="step"><div class="n">3</div><h4>Polimento</h4><div class="meta">superacabamento</div><p>Rk · Rpk · Rvk → superfície funcional plateau.</p></div>
+ <div class="step"><div class="n">2</div><h4>Retífica</h4><div class="meta">CNC / CBN</div><p>Rz · Wt · Rk controlados → rugosidade base, núcleo e integridade macro.</p></div>
+ <div class="step"><div class="n">3</div><h4>Polimento</h4><div class="meta">superacabamento</div><p>Rpk · Rvk → superfície funcional plateau (Rk herdado da retífica).</p></div>
  <div class="step"><div class="n">4</div><h4>Inspeção</h4><div class="meta">rugosímetro</div><p>Validação dos parâmetros antes da liberação.</p></div>
  <div class="step"><div class="n">5</div><h4>Eixo funcional</h4><div class="meta">plateau</div><p>Confiabilidade + durabilidade.</p></div>
  </div>
@@ -816,7 +816,7 @@ section.block:first-child,.hero{min-height:auto}
 
  <div class="card" style="margin-top:18px;background:linear-gradient(135deg,rgba(33,192,139,.1),rgba(61,125,202,.08));border-color:var(--green)">
  <h3>🥇 Regra de ouro</h3>
- <p>Trate sempre a causa na fase correta: <b>Rz / Wt → ajuste a retífica</b>; <b>Rpk / Rvk / Rk → ajuste o polimento</b>. Nunca compense erro de retífica no polimento — a base ruim sempre reaparece na operação.</p>
+ <p>Trate sempre a causa na fase correta: <b>Rz / Wt / Rk → ajuste a retífica</b>; <b>Rpk / Rvk → ajuste o polimento</b>. Nunca compense erro de retífica no polimento — a base ruim sempre reaparece na operação.</p>
  </div>
 </section>
 
@@ -885,7 +885,7 @@ section.block:first-child,.hero{min-height:auto}
  <tr><td><span class="mono">Rz</span></td><td>Pico a vale (média das 5 maiores)</td><td>Retífica</td><td>2,0 – 4,0 µm</td><td>ISO 4287</td></tr>
  <tr><td><span class="mono">Wt</span></td><td>Ondulação total (macro)</td><td>Ambas</td><td>≤ 1,0 µm (retífica) · ≤ 0,300 µm (polimento)</td><td>ISO 4468</td></tr>
  <tr><td><span class="mono">Rpk</span></td><td>Picos reduzidos</td><td>Polimento</td><td>≤ 0,050 µm</td><td>ISO 13565-2</td></tr>
- <tr><td><span class="mono">Rk</span></td><td>Rugosidade do núcleo</td><td>Polimento</td><td>≤ 0,200 µm</td><td>ISO 13565-2</td></tr>
+ <tr><td><span class="mono">Rk</span></td><td>Rugosidade do núcleo</td><td>Medido no polimento · causa na retífica</td><td>≤ 0,200 µm</td><td>ISO 13565-2</td></tr>
  <tr><td><span class="mono">Rvk</span></td><td>Vales reduzidos (óleo)</td><td>Polimento</td><td>≥ 0,100 µm</td><td>ISO 13565-2</td></tr>
  <tr><td><span class="mono">λc</span></td><td>Cut-off (filtro)</td><td>Inspeção</td><td>0,8 mm</td><td>ISO 16610-21</td></tr>
  <tr><td><span class="mono">ln</span></td><td>Comprimento de avaliação</td><td>Inspeção</td><td>5 × lr ≈ 4,0 mm</td><td>ISO 4288</td></tr>
@@ -914,7 +914,7 @@ section.block:first-child,.hero{min-height:auto}
  <h3 style="font-size:17px;margin-bottom:12px">❓ Perguntas frequentes</h3>
  <div id="faqList" style="margin-bottom:30px">
  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Por que não basta medir só o Ra?<span class="arrow">+</span></div><div class="faq-a"><div class="inner">Ra é uma média e "esconde" picos isolados. Dois perfis com o mesmo Ra podem ter comportamento funcional muito diferente. Para cames, os parâmetros da curva de Abbott (Rpk/Rk/Rvk) descrevem melhor a função real de contato e lubrificação.</div></div></div>
- <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">O que significa "tratar a causa na fase certa"?<span class="arrow">+</span></div><div class="faq-a"><div class="inner">Rz e Wt nascem na retífica; Rpk, Rk e Rvk são definidos no polimento. Corrigir um problema na fase errada mascara o sintoma sem eliminar a causa — a base ruim reaparece em operação.</div></div></div>
+ <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">O que significa "tratar a causa na fase certa"?<span class="arrow">+</span></div><div class="faq-a"><div class="inner">Rz, Wt e Rk nascem na retífica; Rpk e Rvk são definidos no polimento. Corrigir um problema na fase errada mascara o sintoma sem eliminar a causa — a base ruim reaparece em operação.</div></div></div>
  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Por que cut-off errado invalida a medição?<span class="arrow">+</span></div><div class="faq-a"><div class="inner">O cut-off define o que entra como rugosidade. Com λc diferente do especificado, parte da ondulação é contada como rugosidade (ou vice-versa), tornando os valores incomparáveis entre peças e operadores.</div></div></div>
  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Rvk muito baixo é bom?<span class="arrow">+</span></div><div class="faq-a"><div class="inner">Não. Rvk muito baixo indica que o polimento removeu os micro-reservatórios de óleo. Sem vales, a lubrificação hidrodinâmica falha sob alta carga e o desgaste aumenta.</div></div></div>
  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Como a rugosidade afeta o consumo de combustível?<span class="arrow">+</span></div><div class="faq-a"><div class="inner">Atrito excessivo no trem de válvulas eleva o consumo em torno de 2–4% (estimativa ilustrativa, sem referência publicada). Em frotas pesadas, isso impacta diretamente o TCO ao longo da vida do motor.</div></div></div>
@@ -1385,13 +1385,13 @@ window.TS_FLOWS = {
 
   Rk: {
     sym:"Rk", name:"Core Roughness Depth — núcleo", dir:"ALTO", color:"amber",
-    phase:"Retífica / Polimento",
+    phase:"Retífica",
     short:"Núcleo profundo — base não controlada. Menor suporte de carga e durabilidade reduzida.",
     diag:"Rk representa a profundidade da região principal de contato (núcleo). Rk alto reduz a capacidade de suporte de carga da superfície.",
     steps:[
-      { n:1, prio:"P3", title:"Processo de acabamento", color:"blue",
-        check:["Remoção excessiva","Tempo de acabamento incorreto","Pressão inadequada"],
-        why:"O acabamento define o núcleo; remoção ou tempo errados deixam o núcleo profundo demais." },
+      { n:1, prio:"P1", title:"Dressagem do rebolo", color:"red",
+        check:["Avanço de dressagem elevado","Intervalo de dressagem longo","Rebolo CBN desgastado"],
+        why:"O núcleo nasce na retífica: dressagem agressiva ou rebolo gasto deixam sulcos profundos que o polimento não remove." },
       { n:2, prio:"P2", title:"Desgaste da ferramenta", color:"amber",
         check:["Alteração da geometria","Perda de capacidade de acabamento","Ponta de diamante do dressador"],
         why:"Ferramenta com geometria alterada perde a capacidade de produzir um núcleo raso e uniforme." },
