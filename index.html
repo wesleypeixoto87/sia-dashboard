@@ -1164,14 +1164,19 @@ function updatePol(){
  document.getElementById('polPath').setAttribute('d','M'+pts.map(p=>p[0]+' '+p[1].toFixed(1)).join(' L'));
  const v=document.getElementById('verdictP');
  const okRpk=rpk<=0.050, okRk=rk<=0.200, okRvk=rvk>=0.100, okWt=wt<=0.300;
- if(okRpk&&okRk&&okRvk&&okWt){v.className='verdict ok';v.textContent='✓ Aprovado (polimento): plateau dentro de todas as tolerâncias — bom suporte de carga e retenção de óleo.';}
+ if(okRpk&&okRk&&okRvk&&okWt){v.className='verdict ok';v.style.whiteSpace='';v.textContent='✓ Aprovado (polimento): plateau dentro de todas as tolerâncias — bom suporte de carga e retenção de óleo.';}
  else{
    let m=[];
-   if(!okRpk) m.push('Rpk alto (>0,050) → picos não removidos → aumentar pressão/tempo de lixa (POLITRIZ).');
-   if(!okRk)  m.push('Rk alto (>0,200) → núcleo profundo → revisar acabamento - avanço de dressagem (RETÍFICA).');
-   if(!okRvk) m.push('Rvk baixo (<0,100) → vales apagados → reduzir pressão/tempo de lixa (POLITRIZ).');
+   if(!okRpk && !okRvk){
+     m.push('Rpk alto (>0,050) + Rvk baixo → revisar acabamento das retíficas!');
+   }else{
+     if(!okRpk) m.push('Rpk alto (>0,050) → picos não removidos → aumentar pressão/tempo de lixa (POLITRIZ).');
+     if(!okRvk) m.push('Rvk baixo (<0,100) → vales apagados → reduzir pressão/tempo de lixa (POLITRIZ).');
+   }
+   if(!okRk)  m.push('Rk alto (>0,200) → núcleo profundo → revisar acabamento (Rz e Wt) - avanço de dressagem (RETÍFICA).');
    if(!okWt)  m.push('Wt alto (>0,300) → ondulação → verificar geometria, vibração, fixação (RETÍFICA).');
-   v.className='verdict bad';v.textContent='✗ Reprovado: '+m.join(' ');
+   v.className='verdict bad';v.style.whiteSpace='pre-line';
+   v.textContent=m.map(x=>'✗ Reprovado: '+x).join('\n');
  }
 }
 
